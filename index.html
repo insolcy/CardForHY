@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>华阳送给你的一张新年贺卡</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body onload="run_annimation();" style="margin:0px;">
+    <div id="envelope-box" class="envelope-box">
+      <img id="envelope-back" class="center-block img-responsive" style="max-width:99%" src="img/envelope_back.png" alt="" />
+      <div id="card" class="center-block">
+        <div id="letter" class="center-block">
+          <div id="message" class="text-center">
+            <p>
+              <br>
+            诸位亲们<br>2017年感谢你们的陪伴<br>在新的一年里<br>我们仍将风雨同行<br><br>祝大家节日愉快<br>三原华阳工贸<br>            </p>
+          </div>
+            <div id="logo-woh"><a href="http://logisticshy.com/"><img id="message-logo" class="center-block img-responsive logo-woh" src="img/logo_woh.png" alt="World of Hyatt logo"/></a></div>        </div>
+        <div id="card-tophalf" class="center-block">
+          <div id="slideshow">
+            <img id="imgWhite" class="center-block img-responsive" src="img/white.png" alt="imgWhite" />
+            <img id="img01" class="center-block img-responsive" src="img/img_01.png" alt="" />
+            <img id="img02" class="center-block img-responsive" src="img/img_02.png" alt="" />
+            <img id="img03" class="center-block img-responsive" src="img/img_03.png" alt="" />
+            <img id="img04" class="center-block img-responsive" src="img/img_04.png" alt="" />
+            <img id="img05" class="center-block img-responsive" src="img/img_05.png" alt="" />
+            <img id="img06" class="center-block img-responsive" src="img/img_05_woh.png" alt="" />
+          </div>
+          <img id="card-front" class="center-block img-responsive" src="img/card_front.png" alt="card-front" />
+        </div>
+      </div>
+      <img id="envelope-front" class="center-block img-responsive" src="img/envelope_front.png" alt="" />
+      <div id="flap">
+        <img id="envelope-flap-back" class="center-block img-responsive" src="img/envelope_flap_back.png" alt="" />
+        <img id="envelope-flap-front" class="center-block img-responsive" src="img/envelope_flap_woh.png" alt="" />
+      </div>
+    </div>
+
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+  <script  src="js/index.js"></script>
+  <script>
+    $(document).ready(function() {
+      TweenMax.set(".envelope-box", {y:-390});
+    });
+    function run_annimation(){
+
+      var envFlap = $("#flap");
+      var envFlapFront = $("#envelope-flap-front");
+      var envFlapBack = $("#envelope-flap-back");
+      var envCard = $("#card");
+      var envCardTopHalf = $("#card-tophalf");
+      var envCardFront = $("#card-front");
+      var envSlideShow = $("#slideshow");
+      var envLetter =  $("#letter");
+      var envMessage = $("#message");
+      var envLogo = $("#logo");
+      var fadeSpeed = 3;
+
+      var image1 = document.getElementById('img01');
+      var computedStyle_image1 = window.getComputedStyle(image1);
+      var img01_height = computedStyle_image1.getPropertyValue('height');
+      var img01_width = computedStyle_image1.getPropertyValue('width');
+
+      var flap1 = document.getElementById('envelope-flap-front');
+      var computedStyle_flap1 = window.getComputedStyle(flap1);
+      var flap_height = computedStyle_flap1.getPropertyValue('height');
+      var flap_width = computedStyle_flap1.getPropertyValue('width');
+console.log(img01_height + ":" + img01_width);
+      // set the width of the container holding the images and message
+      var card_width = (parseInt(img01_width, 10) - 40) + "px";
+      TweenMax.set(envCard, {css:{maxWidth:card_width, display:"block", marginRight:"auto", marginLeft:"auto", position:"relative"}});
+
+      // set up the flap animation flip up
+      TweenMax.set(envFlap, {transformStyle:"preserve-3d"});
+      TweenMax.set(envFlapBack, {rotationX:-180});
+      var flap_top = "-" + (parseInt(flap_height, 10) -2) + "px";
+      TweenMax.set(envFlapBack, {css:{top:flap_top}});
+//      TweenMax.set([envFlapFront, envFlapBack], {backfaceVisibility:"hidden"});
+
+      // lets set the card animation flip up
+      TweenMax.set(envCardTopHalf, {transformStyle:"preserve-3d"});
+      TweenMax.set(envSlideShow, {rotationX:-180});
+      var img01_top = "-" + (parseInt(img01_height, 10) -27) + "px";
+      TweenMax.set(envSlideShow, {css:{top:img01_top}});
+//      TweenMax.set([envSlideShow, envCardTopHalf], {backfaceVisibility:"hidden"});
+
+      // half way down the screen
+      var windowHeight = window.innerHeight/2.5;
+      // start the timeline
+      var tl = new TimelineMax({delay:0, yoyo:false, repeat:0});
+
+      // move envelope down from top of screen
+      tl.to(".envelope-box", 2, {y:windowHeight});
+
+      // flip up the front flap
+      // tl.to(envFlap, 1, {rotationX:-180, transformOrigin:"left top"});
+      tl.to(envFlapFront, 1, {rotationX:-180, transformOrigin:"left top"});
+      tl.to(envFlapBack, 1, {rotationX:0, transformOrigin:"left bottom"},"-=1");
+
+      // move envelope to back
+      tl.set(envFlap, {css:{zIndex:-1}});
+
+      // pop card out of envelope
+      // half way back up to top of screen
+      tl.to(envCard, 1, {y:(-windowHeight)});
+
+      // set the card width so its the same size as img01
+      // tl.set(envLetter, {css:{maxWidth:img01_width}});
+      // move it to the front of other divs
+      tl.set(envCard, {css:{zIndex:1}});
+
+      // move it down half way down screen
+      tl.to(envCard, 1, {css:{top:(windowHeight/1)+100}});
+      // actually only move it down the height of the img01
+      //tl.to(envCard, 1, {css:{top:((parseInt(img01_height, 10)))}});
+
+      // make the back of the card visable
+      tl.set(envLetter, {css:{height:(parseInt(img01_height, 10) -27) + "px"}});
+      tl.to(envLetter, 0, {css:{autoAlpha:1}});
+
+      // flip up the front flap
+      // tl.to(envCardTopHalf, 2, {rotationX:180, transformOrigin:"left top"});
+      tl.to(envCardFront, 1, {rotationX:-180, transformOrigin:"left top"});
+      tl.to(envSlideShow, 1, {rotationX:0, transformOrigin:"left bottom"},"-=1");
+
+      // // slide show
+      tl.to($("#img01"), fadeSpeed, {css:{autoAlpha:0}});
+      tl.to($("#img02"), fadeSpeed, {css:{autoAlpha:1}},"-=3");
+      tl.to($("#img02"), fadeSpeed, {css:{autoAlpha:0}});
+      tl.to($("#img03"), fadeSpeed, {css:{autoAlpha:1}},"-=3");
+      tl.to($("#img03"), fadeSpeed, {css:{autoAlpha:0}});
+      tl.to($("#img04"), fadeSpeed, {css:{autoAlpha:1}},"-=3");
+      tl.to($("#img04"), fadeSpeed, {css:{autoAlpha:0}});
+
+                tl.to($("#img06"), fadeSpeed, {css:{autoAlpha:1}},"-=3");
+          }
+  </script>
+</body>
+</html>

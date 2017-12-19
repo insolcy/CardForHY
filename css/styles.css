@@ -1,0 +1,158 @@
+html, body{
+
+}
+
+body {
+  /*background: url('../img/snowflakes.png');*/
+  /*background-repeat: repeat-x;*/
+  /*background-color: #000066;*/
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+.envelope-box{
+}
+
+#flap,
+#envelope-front,
+#card,
+#slideshow,
+#card-tophalf,
+#letter,
+#envelope-back,
+#envelope-flap-front,
+#envelope-flap-back,
+#img01, #img02, #img03, #img04, #img05, #img06, #imgWhite{
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+
+#envelope-flap-front,
+#envelope-flap-back,
+#card-tophalf,
+#card-front,
+#slideshow{
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+}
+
+#card{
+  top: 5px;
+}
+
+#letter{
+  /*position:relative;*/
+  background-color:#FFFFFF;
+  visibility: hidden;
+}
+
+#img01{
+
+}
+
+#img02, #img03, #img04, #img05, #img06{
+  visibility: hidden;
+}
+
+#message{
+  font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+  font-weight: bold;
+  color: #f40040;
+  position: relative;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Small devices (phones, 200px and up) */
+@media (min-width: 200px){
+  body {
+    font-size: 10px;
+    background: url('../img/snowflakes_640.gif');
+    background-repeat: repeat-x;
+    background-color: #810500;
+
+  }
+  .logo-woh{
+    max-height: 37px;
+  }
+  .logo-mb{
+    max-height: 18px;
+  }
+}
+
+/* Small devices (phones, 370px and up) */
+@media (min-width: 370px){
+  body {
+    font-size: 12px;
+    background: url('../img/snowflakes_640.gif');
+    background-repeat: repeat-x;
+    background-color: #810500;
+
+  }
+  .logo-woh{
+    max-height: 37px;
+  }
+  .logo-mb{
+    max-height: 22px;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px){
+  body {
+    font-size: 18px;
+    background: url('../img/snowflakes_640.gif');
+    background-repeat: repeat-x;
+    background-color: #810500;
+  }
+  .logo-woh{
+    max-height: 60px;
+  }
+  .logo-mb{
+    max-height: 35px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px){
+  body {
+    font-size: 18px;
+    background: url('../img/snowflakes_640.gif');
+    background-repeat: repeat-x;
+    background-color: #810500;
+  }
+  .logo-woh{
+    max-height: 60px;
+  }
+  .logo-mb{
+    max-height: 35px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+    background: url('../img/snowflakes_640.gif');
+    background-repeat: repeat-x;
+    background-color: #810500;
+  }
+  .logo-woh{
+    max-height: 60px;
+  }
+  .logo-mb{
+    max-height: 35px;
+  }
+}
